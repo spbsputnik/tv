@@ -313,6 +313,27 @@
     header.compact .phone{flex-direction:row;justify-content:center;gap:10px;min-height:54px;padding:8px 16px}
     header.compact .phone strong{font-size:20px}
   }
+  /* Прайс на телефоне: карточки вместо горизонтального скролла */
+  @media (max-width:640px){
+    .table-wrap{background:none;border:0;box-shadow:none;border-radius:0;overflow:visible}
+    .table-scroll{overflow-x:visible}
+    .price-table,.price-table tbody,.price-table tr,.price-table td{display:block;width:auto}
+    .price-table thead{display:none}
+    .price-table tr{
+      background:linear-gradient(135deg,#FFFFFF,#FAFAF6);
+      border:1px solid var(--line);border-radius:18px;
+      padding:18px 20px;margin-bottom:12px;box-shadow:var(--sh-sm);
+    }
+    .price-table tbody tr:nth-child(even){background:linear-gradient(135deg,#FFFFFF,#FAFAF6)}
+    .price-table tbody tr:hover{background:linear-gradient(135deg,#FFFFFF,#FAFAF6)}
+    .price-table td{padding:0;border:0}
+    .price-table td:first-child{font-size:19px;line-height:1.5;margin-bottom:12px}
+    .price-table td:last-child::before{
+      content:"Цена под ключ";display:block;
+      font-size:15px;font-weight:700;color:var(--muted);margin-bottom:8px;
+    }
+    .pill{white-space:normal;font-size:20px}
+  }
 </style>
 </head>
 <body>
