@@ -44,12 +44,13 @@
 
   /* ===== ШАПКА ===== */
   header{
-    position:sticky;top:0;z-index:60;
-    background:rgba(255,255,255,.82);
+    position:fixed;top:0;left:0;right:0;z-index:60;
+    background:rgba(255,255,255,.86);
     backdrop-filter:saturate(180%) blur(16px);
     -webkit-backdrop-filter:saturate(180%) blur(16px);
     border-bottom:1px solid var(--line);
   }
+  .head-spacer{width:100%;height:130px}
   .head-row{display:flex;align-items:center;gap:20px;padding:14px 0;transition:padding .22s cubic-bezier(.4,0,.2,1)}
   .logo{
     display:flex;align-items:center;gap:16px;flex:1 1 auto;min-width:0;overflow:hidden;
@@ -362,6 +363,7 @@
     </a>
   </div>
 </header>
+<div class="head-spacer" id="headSpacer"></div>
 
 <div class="hero">
   <div class="dots"></div>
@@ -767,14 +769,31 @@ function faq(el){
   el.parentNode.classList.toggle('open');
 }
 (function(){
-  var hdr=document.querySelector('header'), off=false;
+  var hdr=document.querySelector('header'), sp=document.getElementById('headSpacer');
+  function syncSpacer(){
+    var was=hdr.classList.contains('compact');
+    sp.style.height='0px';
+    if(was) hdr.classList.remove('compact');
+    sp.style.height=hdr.offsetHeight+'px';
+    if(was) hdr.classList.add('compact');
+  }
+  var off=false, tick=false;
   function onScroll(){
-    var y=window.pageYOffset||document.documentElement.scrollTop;
-    var next = off ? y>100 : y>180;
-    if(next!==off){ off=next; hdr.classList.toggle('compact',off); }
+    if(tick) return;
+    tick=true;
+    requestAnimationFrame(function(){
+      tick=false;
+      var y=window.pageYOffset||document.documentElement.scrollTop;
+      var next = off ? y>90 : y>190;
+      if(next!==off){ off=next; hdr.classList.toggle('compact',off); }
+    });
   }
   window.addEventListener('scroll',onScroll,{passive:true});
-  onScroll();
+  window.addEventListener('resize',syncSpacer);
+  window.addEventListener('orientationchange',syncSpacer);
+  window.addEventListener('load',syncSpacer);
+  if(document.fonts&&document.fonts.ready) document.fonts.ready.then(syncSpacer);
+  syncSpacer();
 })();
 </script>
 </body>
