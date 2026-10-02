@@ -50,8 +50,16 @@
     -webkit-backdrop-filter:saturate(180%) blur(16px);
     border-bottom:1px solid var(--line);
   }
-  .head-row{display:flex;align-items:center;gap:20px;flex-wrap:wrap;padding:16px 0}
-  .logo{display:flex;align-items:center;gap:16px;flex:1;min-width:290px}
+  .head-row{display:flex;align-items:center;gap:20px;flex-wrap:wrap;padding:16px 0;transition:padding .25s ease}
+  .logo{
+    display:flex;align-items:center;gap:16px;flex:1;min-width:290px;
+    max-height:140px;overflow:hidden;
+    transition:max-height .25s ease,opacity .2s ease,transform .25s ease,margin .25s ease;
+  }
+  header.compact .head-row{padding:8px 0}
+  header.compact .logo{max-height:0;opacity:0;transform:translateY(-12px);margin:0;pointer-events:none}
+  header.compact .phone{flex-direction:row;align-items:center;gap:12px;padding:8px 20px;min-height:56px}
+  header.compact .phone strong{font-size:21px}
   .logo .mark{width:56px;height:56px;border-radius:16px;background:var(--grad-brand);display:grid;place-items:center;color:#fff;box-shadow:var(--sh-sm);flex:none}
   .logo .mark .ic{width:30px;height:30px}
   .logo strong{display:block;font-size:23px;font-weight:800;color:var(--ink);line-height:1.25;letter-spacing:-.01em}
@@ -85,7 +93,7 @@
   .hero .note{color:rgba(255,255,255,.72)}
 
   /* ===== ПЕРВЫЙ ЭКРАН ===== */
-  .hero{position:relative;overflow:hidden;background:var(--grad-hero);color:#fff;padding:70px 0 0}
+  .hero{position:relative;overflow:hidden;background:var(--grad-hero);color:#fff;padding:70px 0 0;scroll-margin-top:70px}
   .hero::before,.hero::after{content:'';position:absolute;border-radius:50%;pointer-events:none}
   .hero::before{width:680px;height:680px;background:rgba(66,190,116,.30);top:-260px;right:-190px;filter:blur(80px)}
   .hero::after{width:560px;height:560px;background:rgba(226,168,74,.20);bottom:-260px;left:-170px;filter:blur(80px)}
@@ -155,7 +163,7 @@
   .gradbar{height:6px;border:0;margin:0;background:linear-gradient(90deg,#1B5E3F,#31945F 35%,#E8B45C 70%,#C97A20)}
 
   /* ===== СЕКЦИИ ===== */
-  section{padding:76px 0}
+  section{padding:76px 0;scroll-margin-top:90px}
   section.light{background:var(--grad-light);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
   h2.sec{font-size:37px;line-height:1.25;font-weight:800;letter-spacing:-.015em;margin-bottom:16px}
   p.intro{font-size:21px;color:var(--muted);margin-bottom:38px;max-width:36em}
@@ -302,6 +310,8 @@
     .why .card{flex-direction:column;gap:16px}
     .head-row{flex-direction:column;align-items:stretch}
     .phone{align-items:center;text-align:center}
+    header.compact .phone{flex-direction:row;justify-content:center;gap:10px;min-height:54px;padding:8px 16px}
+    header.compact .phone strong{font-size:20px}
   }
 </style>
 </head>
@@ -744,6 +754,15 @@ function sel(el){
 function faq(el){
   el.parentNode.classList.toggle('open');
 }
+(function(){
+  var hdr=document.querySelector('header');
+  function onScroll(){
+    var y=window.pageYOffset||document.documentElement.scrollTop;
+    if(y>140) hdr.classList.add('compact'); else hdr.classList.remove('compact');
+  }
+  window.addEventListener('scroll',onScroll,{passive:true});
+  onScroll();
+})();
 </script>
 </body>
 </html>
