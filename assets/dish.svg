@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 340" width="400" height="340" role="img" aria-label="Спутниковая антенна на стене дома">
+<defs>
+<linearGradient id="bowl" x1="0" y1="0" x2="0" y2="1">
+<stop offset="0" stop-color="#FFFFFF"/>
+<stop offset="1" stop-color="#D9E3E8"/>
+</linearGradient>
+</defs>
+<rect x="26" y="252" width="348" height="16" rx="6" fill="#9C7A5C"/>
+<path d="M26,268 L374,268 L374,300 L26,300 Z" fill="#8A6A4E"/>
+<path d="M26,268 L374,268 L374,276 L26,276 Z" fill="#7C5C41"/>
+<g stroke="#B49A7C" stroke-width="3">
+<line x1="86" y1="276" x2="86" y2="300"/>
+<line x1="150" y1="276" x2="150" y2="300"/>
+<line x1="214" y1="276" x2="214" y2="300"/>
+<line x1="278" y1="276" x2="278" y2="300"/>
+<line x1="342" y1="276" x2="342" y2="300"/>
+</g>
+<rect x="176" y="196" width="48" height="62" rx="5" fill="#7C5C41"/>
+<g transform="translate(214,86) rotate(-34)">
+<rect x="-30" y="-10" width="60" height="20" rx="7" fill="#9AA7AF"/>
+<rect x="-30" y="-10" width="60" height="8" rx="4" fill="#B4C0C7"/>
+<g stroke="#6E7B80" stroke-width="7" stroke-linecap="round">
+<line x1="0" y1="10" x2="0" y2="116"/>
+<line x1="-20" y1="10" x2="-24" y2="116"/>
+<line x1="20" y1="10" x2="24" y2="116"/>
+<line x1="-26" y1="116" x2="26" y2="116"/>
+</g>
+<ellipse rx="86" ry="34" fill="url(#bowl)" stroke="#8B98A0" stroke-width="5"/>
+<path d="M-78,-6 A82,32 0 0 1 78,-6 L60,12 A70,26 0 0 0 -60,12 Z" fill="#C6D2D8" opacity="0.55"/>
+<line x1="0" y1="0" x2="0" y2="-72" stroke="#8B98A0" stroke-width="6" stroke-linecap="round"/>
+<circle cx="0" cy="-78" r="12" fill="#C4744F"/>
+<circle cx="0" cy="-78" r="5" fill="#E39A72"/>
+<circle cx="0" cy="0" r="7" fill="#8B98A0"/>
+</g>
+<g stroke="#6E7B80" stroke-width="3" stroke-linecap="round" opacity="0.55" fill="none">
+<path d="M326,74 q10,-9 21,0 q11,-9 22,0"/>
+<path d="M340,102 q9,-8 19,0 q10,-8 20,0"/>
+<path d="M330,132 q10,-9 21,0 q11,-9 22,0"/>
+<path d="M344,160 q9,-8 19,0"/>
+</g>
+<g fill="#5E9350">
+<ellipse cx="58" cy="312" rx="42" ry="20"/>
+<ellipse cx="24" cy="318" rx="28" ry="14"/>
+<ellipse cx="346" cy="314" rx="40" ry="19"/>
+<ellipse cx="382" cy="320" rx="26" ry="13"/>
+</g>
+<g stroke="#4C8442" stroke-width="4" stroke-linecap="round" fill="none">
+<path d="M58,312 q4,-18 12,-23"/>
+<path d="M346,314 q-4,-16 8,-22"/>
+</g>
+</svg>

@@ -1,0 +1,664 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Спутниковые антенны и интернет на даче — Санкт-Петербург и Ленинградская область</title>
+<meta name="description" content="Установка спутниковых антенн, интернет 4G и спутниковый интернет на даче, усиление сотового сигнала в Ленинградской области. Цена известна до выезда, оплата после монтажа, гарантия 2 года.">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<style>
+  :root{
+    --bg:#FAF7F0;
+    --card:#FFFFFF;
+    --text:#2C2A26;
+    --muted:#6B6459;
+    --accent:#2F6B3C;
+    --accent-dark:#245230;
+    --accent-soft:#EAF2EA;
+    --price:#C87A2B;
+    --head:#3D5A45;
+    --line:#E2DACB;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{
+    background:var(--bg);
+    color:var(--text);
+    font-family:'PT Sans','Fira Sans','Segoe UI',Arial,sans-serif;
+    font-size:20px;
+    line-height:1.7;
+  }
+  img{max-width:100%}
+  .wrap{max-width:1100px;margin:0 auto;padding:0 24px}
+
+  /* ===== ШАПКА ===== */
+  header{
+    background:var(--card);
+    border-bottom:3px solid var(--accent);
+    padding:20px 0;
+    position:sticky;top:0;z-index:50;
+  }
+  .head-row{display:flex;align-items:center;gap:20px;flex-wrap:wrap}
+  .logo{display:flex;align-items:center;gap:18px;flex:1;min-width:300px}
+  .logo img{width:78px;height:auto;flex:none}
+  .logo strong{font-size:26px;font-weight:700;color:var(--head);line-height:1.2;display:block}
+  .logo small{display:block;font-size:17px;font-weight:400;color:var(--muted);margin-top:4px}
+  .phone{
+    display:flex;flex-direction:column;justify-content:center;
+    background:var(--accent);color:#fff;text-decoration:none;
+    border-radius:14px;padding:8px 26px;min-height:64px;
+  }
+  .phone span{font-size:15px;opacity:.9;line-height:1.2}
+  .phone strong{font-size:24px;line-height:1.3}
+  .phone:hover{background:var(--accent-dark)}
+
+  /* ===== КНОПКИ ===== */
+  .btn{
+    display:inline-flex;align-items:center;justify-content:center;gap:12px;
+    min-height:64px;padding:16px 34px;border-radius:12px;
+    font-size:22px;font-weight:700;text-decoration:none;
+    border:3px solid transparent;cursor:pointer;font-family:inherit;
+  }
+  .btn-primary{background:var(--accent);color:#fff}
+  .btn-primary:hover{background:var(--accent-dark)}
+  .btn-ghost{background:var(--card);color:var(--accent);border-color:var(--accent)}
+  .btn-ghost:hover{background:var(--accent-soft)}
+  .btn-note{display:block;font-size:17px;color:var(--muted);text-align:center;margin-top:10px}
+
+  /* ===== ГРАФИКА ===== */
+  .scene{
+    width:100%;height:auto;display:block;
+    border-radius:26px;border:3px solid var(--line);
+    box-shadow:0 10px 30px rgba(61,90,69,.12);
+    margin:34px 0 0;
+  }
+  .grass{display:block;width:100%;height:auto}
+  .illus-row{display:grid;grid-template-columns:1fr;gap:34px;align-items:start}
+  .illus{width:100%;max-width:320px;margin:0 auto;display:block}
+  .illus-side{position:sticky;top:110px}
+  .head-with-art{display:flex;align-items:center;gap:26px;margin-bottom:18px;flex-wrap:wrap}
+  .head-with-art img{width:96px;height:auto;flex:none}
+  .head-with-art h2.sec{margin-bottom:0}
+  .art-strip{margin:0 0 34px}
+
+  /* ===== ПЕРВЫЙ ЭКРАН ===== */
+  .hero{background:linear-gradient(180deg,#EFF5EC 0%,var(--bg) 100%);padding:56px 0 0}
+  .hero h1{font-size:44px;line-height:1.25;color:var(--head);margin-bottom:22px}
+  .hero p.lead{font-size:24px;color:var(--text);margin-bottom:14px}
+  .hero p.sub{font-size:20px;color:var(--muted)}
+
+  .quiz{background:var(--card);border:3px solid var(--accent);border-radius:20px;padding:38px 34px;margin-top:34px}
+  .quiz h2{font-size:30px;color:var(--head);margin-bottom:26px}
+  .choices{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+  .choice{
+    display:flex;align-items:center;gap:18px;min-height:88px;
+    background:var(--bg);border:3px solid var(--line);border-radius:14px;
+    padding:18px 24px;font-size:22px;font-weight:700;cursor:pointer;
+  }
+  .choice:hover{border-color:var(--accent);background:var(--accent-soft)}
+  .choice .mark{flex:none;width:38px;height:38px;border:3px solid var(--accent);border-radius:9px}
+  .choice.on{background:var(--accent);color:#fff;border-color:var(--accent)}
+  .choice.on .mark{background:#fff;border-color:var(--accent)}
+  .step2{margin-top:28px;padding-top:28px;border-top:2px solid var(--line)}
+  .step2 h3{font-size:24px;color:var(--head);margin-bottom:18px}
+  .quiz .btn{margin-top:26px;width:100%}
+  .hero-grass{margin-top:56px}
+
+  /* ===== СЕКЦИИ ===== */
+  section{padding:72px 0}
+  section.tint{background:var(--card);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+  h2.sec{font-size:36px;color:var(--head);margin-bottom:18px;line-height:1.25}
+  p.intro{font-size:21px;color:var(--muted);margin-bottom:38px}
+  h3.subhead{font-size:26px;color:var(--head);margin:48px 0 20px}
+
+  .grid2{display:grid;grid-template-columns:1fr 1fr;gap:22px}
+  .grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+
+  .card{background:var(--card);border:2px solid var(--line);border-radius:18px;padding:30px}
+  .tint .card{background:var(--bg)}
+  .card h3{font-size:26px;color:var(--head);margin-bottom:12px;line-height:1.3}
+  .card p{font-size:19px;color:var(--muted);margin-bottom:16px}
+  .card .price{font-size:32px;font-weight:700;color:var(--price);line-height:1.2;margin-bottom:6px}
+  .card .price small{font-size:18px;font-weight:400;color:var(--muted);display:block;margin-top:6px}
+
+  .explain{background:var(--card);border-left:8px solid var(--accent);border-radius:0 16px 16px 0;padding:30px 34px;margin-bottom:22px}
+  .explain h3{font-size:26px;color:var(--head);margin-bottom:10px}
+  .explain p{font-size:21px}
+
+  .price-table{width:100%;border-collapse:collapse;background:var(--card);border-radius:16px;overflow:hidden;font-size:20px}
+  .price-table th{background:var(--head);color:#fff;text-align:left;padding:18px 22px;font-size:20px}
+  .price-table td{padding:18px 22px;border-top:2px solid var(--line)}
+  .price-table tr:nth-child(even) td{background:#FCFAF6}
+  .price-table td.num{font-weight:700;color:var(--price);white-space:nowrap}
+  .table-scroll{overflow-x:auto;border-radius:16px;border:2px solid var(--line)}
+
+  ul.checks{list-style:none;display:grid;grid-template-columns:1fr 1fr;gap:12px 28px}
+  ul.checks li{display:flex;gap:14px;align-items:flex-start;font-size:20px}
+  ul.checks li::before{
+    content:'';flex:none;width:30px;height:30px;margin-top:5px;
+    background:var(--accent) center/20px no-repeat url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='4' stroke-linecap='round'%3E%3Cpath d='M4 12l6 6L20 6'/%3E%3C/svg%3E");
+    border-radius:7px;
+  }
+
+  .who{background:var(--card);border:2px solid var(--accent);border-radius:18px;padding:28px}
+  .tint .who{background:var(--bg)}
+  .who h3{font-size:25px;color:var(--head);margin-bottom:10px}
+  .who p{font-size:19px;color:var(--muted)}
+
+  .promise{background:var(--accent-soft);border-radius:20px;padding:40px 34px}
+  .promise ul{list-style:none}
+  .promise li{font-size:22px;font-weight:700;color:var(--head);margin-bottom:16px;display:flex;gap:16px;align-items:flex-start}
+  .promise li:last-child{margin-bottom:0}
+  .promise li::before{
+    content:'';flex:none;width:34px;height:34px;margin-top:8px;background:var(--accent) center/22px no-repeat url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='4' stroke-linecap='round'%3E%3Cpath d='M4 12l6 6L20 6'/%3E%3C/svg%3E");
+    border-radius:8px;
+  }
+
+  .works{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+  .work{background:var(--card);border:2px solid var(--line);border-radius:18px;overflow:hidden}
+  .work .ph{height:190px;background:linear-gradient(160deg,#C9D6C6,#E7E0D2);display:flex;align-items:center;justify-content:center;color:var(--head);font-size:19px;font-weight:700}
+  .work .cap{padding:18px 22px;font-size:18px;color:var(--muted)}
+  .work .cap strong{display:block;font-size:20px;color:var(--text);margin-bottom:4px}
+
+  .review{background:var(--card);border:2px solid var(--line);border-radius:18px;padding:28px}
+  .tint .review{background:var(--bg)}
+  .review p{font-size:20px;margin-bottom:16px}
+  .review .who-line{font-size:18px;color:var(--accent);font-weight:700}
+
+  .districts{background:var(--card);border:2px solid var(--line);border-radius:18px;padding:30px}
+  .tint .districts{background:var(--bg)}
+  .districts ul{list-style:none;columns:2;column-gap:40px;font-size:20px}
+  .districts li{margin-bottom:10px;break-inside:avoid}
+
+  .faq-item{background:var(--card);border:2px solid var(--line);border-radius:14px;margin-bottom:16px;overflow:hidden}
+  .faq-q{font-size:22px;font-weight:700;color:var(--head);padding:24px 28px;cursor:pointer;display:flex;justify-content:space-between;gap:20px}
+  .faq-q:hover{background:var(--accent-soft)}
+  .faq-a{display:none;padding:0 28px 26px;font-size:20px;color:var(--text)}
+  .faq-item.open .faq-a{display:block}
+  .faq-item.open .faq-q{background:var(--accent-soft)}
+
+  .form-box{background:var(--card);border:3px solid var(--accent);border-radius:20px;padding:38px 34px}
+  label{display:block;font-size:21px;font-weight:700;color:var(--head);margin:22px 0 10px}
+  input[type=text],input[type=tel]{
+    width:100%;min-height:68px;font-size:22px;font-family:inherit;
+    padding:14px 20px;border:3px solid var(--line);border-radius:12px;background:var(--bg);color:var(--text);
+  }
+  input:focus{outline:none;border-color:var(--accent)}
+  .radio-row{display:flex;flex-wrap:wrap;gap:14px}
+  .radio-row label{
+    display:flex;align-items:center;gap:14px;margin:0;font-weight:400;font-size:20px;
+    background:var(--bg);border:3px solid var(--line);border-radius:12px;padding:14px 22px;min-height:68px;cursor:pointer;
+  }
+  .radio-row label:hover{border-color:var(--accent);background:var(--accent-soft)}
+  .radio-row input{width:30px;height:30px;accent-color:var(--accent)}
+  .radio-row label.sel{border-color:var(--accent);background:var(--accent-soft);font-weight:700}
+  .form-box .btn{width:100%;margin-top:28px}
+  .form-note{font-size:18px;color:var(--muted);text-align:center;margin-top:14px}
+
+  footer{background:var(--head);color:#fff;padding:0 0 52px}
+  footer h3{font-size:26px;margin-bottom:16px}
+  .fphone{font-size:30px;font-weight:700;text-decoration:none;color:#fff;display:block;margin-bottom:8px}
+  .fgrid{display:grid;grid-template-columns:1fr 1fr;gap:36px;padding-top:44px}
+  .fbottom{margin-top:34px;padding-top:26px;border-top:2px solid rgba(255,255,255,.25);font-size:17px;opacity:.85}
+
+  @media (max-width:1000px){
+    .illus-side{display:none}
+    .illus-row{grid-template-columns:1fr}
+  }
+  @media (max-width:860px){
+    .hero h1{font-size:34px}
+    h2.sec{font-size:30px}
+    .grid2,.grid3,.choices,.works,.fgrid{grid-template-columns:1fr}
+    ul.checks{grid-template-columns:1fr}
+    .districts ul{columns:1}
+    .head-row{flex-direction:column;align-items:stretch}
+    .phone{text-align:center}
+    .scene{border-radius:18px}
+  }
+</style>
+</head>
+<body>
+
+<!-- ================= ШАПКА ================= -->
+<header>
+  <div class="wrap head-row">
+    <div class="logo">
+      <img src="assets/dish.svg" alt="Спутниковая антенна">
+      <span>
+        <strong>Спутниковые антенны и интернет<br>на даче</strong>
+        <small>Санкт-Петербург и Ленинградская область · выезд без выходных</small>
+      </span>
+    </div>
+    <div class="head-tools">
+      <a href="tel:+78120000000" class="phone">
+        <span>Позвоните сейчас</span>
+        <strong>8 (812) 000-00-00</strong>
+      </a>
+    </div>
+  </div>
+</header>
+
+<!-- ================= ПЕРВЫЙ ЭКРАН ================= -->
+<div class="hero">
+  <div class="wrap">
+    <h1>Тарелка, интернет и связь на даче — под ключ и по одной цене</h1>
+    <p class="lead">Цену называем до выезда и не меняем на месте.</p>
+    <p class="sub">Оплата — после монтажа. Гарантия 2 года на работы. Выезд по всей Ленинградской области.</p>
+
+    <img class="scene" src="assets/scene-dacha.svg" alt="Загородный дом со спутниковой антенной на крыше, яблоня с яблоками, лужайка с цветами" width="1200" height="460">
+
+    <div class="quiz">
+      <h2>Что нужно сделать на даче?</h2>
+      <div class="choices" id="choices">
+        <div class="choice" onclick="pick(this)"><span class="mark"></span>Установить тарелку</div>
+        <div class="choice" onclick="pick(this)"><span class="mark"></span>Подключить интернет</div>
+        <div class="choice" onclick="pick(this)"><span class="mark"></span>Усилить сотовой сигнал</div>
+        <div class="choice" onclick="pick(this)"><span class="mark"></span>Починить, что не работает</div>
+      </div>
+
+      <div class="step2">
+        <h3>Как далеко от города?</h3>
+        <div class="radio-row" id="dist">
+          <label onclick="sel(this)"><input type="radio" name="d">До 20 км</label>
+          <label onclick="sel(this)"><input type="radio" name="d">20–50 км</label>
+          <label onclick="sel(this)"><input type="radio" name="d">50–90 км</label>
+          <label onclick="sel(this)"><input type="radio" name="d">Дальше 90 км</label>
+        </div>
+      </div>
+
+      <a href="#zayavka" class="btn btn-primary">Узнать точную цену</a>
+      <span class="btn-note">Перезвоним в течение 15 минут. Консультация бесплатная.</span>
+    </div>
+  </div>
+  <div class="hero-grass">
+    <img class="grass" src="assets/grass-strip.svg" alt="" aria-hidden="true" width="1200" height="70">
+  </div>
+</div>
+
+<!-- ================= ПРОСТЫМ ЯЗЫКОМ ================= -->
+<section class="tint">
+  <div class="wrap illus-row">
+    <div>
+      <div class="head-with-art">
+        <img src="assets/dish.svg" alt="">
+        <h2 class="sec">Если вы не разбираетесь в технике</h2>
+      </div>
+      <p class="intro">Объясняем по-простому, без терминов.</p>
+
+      <div class="explain">
+        <h3>Тарелка</h3>
+        <p>Тарелка ловит сигнал со спутника прямо из космоса — провода до города не нужны. Чем больше тарелка, тем больше каналов и тем лучше картинка в дождь и снег. На даче обычно хватает тарелки размером с блюдо.</p>
+      </div>
+
+      <div class="explain">
+        <h3>Интернет</h3>
+        <p>Если в вашем посёлке есть проводной интернет — он почти всегда быстрее и дешевле. Но если провода нет, а сотовый 4G еле ловит, работает только спутниковый интернет. Он работает везде, в любую погоду.</p>
+      </div>
+
+      <div class="explain">
+        <h3>Усилитель связи</h3>
+        <p>Когда сотовой связи нет даже в двух шагах от дома: в подвале, в бане, за металлическим забором, вдали от вышки. Усилитель ставится на крышу или стену — и связь появляется во всём доме.</p>
+      </div>
+    </div>
+
+    <div class="illus illus-side">
+      <img class="illus" src="assets/apple-tree.svg" alt="Яблоня со спелыми яблоками" width="300" height="320">
+      <img class="grass" style="margin-top:8px" src="assets/grass-strip.svg" alt="" aria-hidden="true" width="1200" height="70">
+    </div>
+  </div>
+</section>
+
+<!-- ================= ЦЕНЫ ================= -->
+<section>
+  <div class="wrap">
+    <h2 class="sec">Цены</h2>
+    <p class="intro">Без «по запросу». Ниже — полная стоимость под ключ, включая работу мастера.</p>
+
+    <div class="table-scroll">
+      <table class="price-table">
+        <thead>
+          <tr><th>Что делаем</th><th>Цена под ключ</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Тарелка Триколор, один телевизор, установка и настройка</td><td class="num">от 8 900 ₽</td></tr>
+          <tr><td>Тарелка Триколор, два телевизора</td><td class="num">от 11 500 ₽</td></tr>
+          <tr><td>Тарелка НТВ Плюс, один телевизор, год подписки в подарок</td><td class="num">от 7 400 ₽</td></tr>
+          <tr><td>Бесплатное эфирное ТВ, 20 каналов, без абонплаты</td><td class="num">от 5 500 ₽</td></tr>
+          <tr><td>Интернет 4G на даче: антенна, модем, роутер и установка</td><td class="num">от 9 900 ₽</td></tr>
+          <tr><td>Усиление сотового сигнала в доме: комплект и установка</td><td class="num">от 10 000 ₽</td></tr>
+          <tr><td>Спутниковый интернет: тарелка, модем, роутер, установка</td><td class="num">от 15 000 ₽</td></tr>
+          <tr><td>Абонплата за каналы Триколор</td><td class="num">от 239 ₽/мес</td></tr>
+          <tr><td>Абонплата за спутниковый интернет</td><td class="num">от 300 ₽/мес</td></tr>
+          <tr><td>Ремонт ресивера или телевизора на дому</td><td class="num">от 1 200 ₽</td></tr>
+          <tr><td>Установка только антенны, без оборудования</td><td class="num">от 2 500 ₽</td></tr>
+          <tr><td>Видеонаблюдение на даче, 2 камеры и установка</td><td class="num">по запросу</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- ================= ЧТО ВХОДИТ ================= -->
+<section class="tint">
+  <div class="wrap">
+    <h2 class="sec">Что входит в цену установки тарелки</h2>
+    <p class="intro">Ничего не придётся докупать отдельно и никто не скажет «это ещё не входило».</p>
+    <ul class="checks">
+      <li>Антенна (тарелка)</li>
+      <li>Приставка или ресивер</li>
+      <li>Конвертер</li>
+      <li>Кабель до 20 метров</li>
+      <li>Кронштейн для крепления</li>
+      <li>Монтаж и установка</li>
+      <li>Настройка и поиск каналов</li>
+      <li>Регистрация оборудования</li>
+      <li>Договор и гарантийный талон</li>
+      <li>Абонплата — указана в догворе сразу</li>
+      <li>Консультация, как пользоваться</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ================= КАРТОЧКИ УСЛУГ ================= -->
+<section>
+  <div class="wrap">
+    <div class="head-with-art">
+      <img src="assets/dish.svg" alt="">
+      <h2 class="sec">Что мы делаем</h2>
+    </div>
+    <p class="intro">Четыре основных направления. Всё остальное — ремонт, обмен, охрана — тоже делаем.</p>
+
+    <div class="grid2">
+      <div class="card">
+        <h3>Спутниковое ТВ под ключ</h3>
+        <p>Триколор, НТВ Плюс, МТС ТВ, Телекарта и зарубежные спутники. Один телевизор или два сразу.</p>
+        <div class="price">от 8 900 ₽<small>установка мастера включена в цену</small></div>
+        <a href="#zayavka" class="btn btn-primary" style="margin-top:20px">Хочу тарелку</a>
+      </div>
+
+      <div class="card">
+        <h3>Интернет на даче</h3>
+        <p>Два варианта: антенна 4G с модемом и роутером — или спутниковый интернет, если 4G не ловит совсем.</p>
+        <div class="price">от 9 900 ₽<small>спутниковый интернет — от 15 000 ₽, работает всегда</small></div>
+        <a href="#zayavka" class="btn btn-primary" style="margin-top:20px">Хочу интернет</a>
+      </div>
+
+      <div class="card">
+        <h3>Усиление сотового сигнала</h3>
+        <p>Антенна на крыше или стене плюс усилитель. Появляется связь в доме, подвале, бане, у грядок.</p>
+        <div class="price">от 10 000 ₽<small>перед установкой бесплатно замеряем сигнал</small></div>
+        <a href="#zayavka" class="btn btn-primary" style="margin-top:20px">Хочу усилить связь</a>
+      </div>
+
+      <div class="card">
+        <h3>Ремонт и обмен</h3>
+        <p>Не работает приставка или телевизор — приедем и починим. Старый ресивер поменяем на новый или на модуль.</p>
+        <div class="price">от 1 200 ₽<small>обмен ресивера — от 3 500 ₽ вместе с установкой</small></div>
+        <a href="#zayavka" class="btn btn-primary" style="margin-top:20px">Нужен ремонт</a>
+      </div>
+    </div>
+
+    <h3 class="subhead">Делаем ещё и это</h3>
+    <ul class="checks">
+      <li>Видеонаблюдение на даче</li>
+      <li>Домофоны в дом и в коттедж</li>
+      <li>Умный дом: свет, ворота, отопление</li>
+      <li>Новогодняя подсветка фасадов</li>
+      <li>Бесплатные 20 каналов DVB-T2</li>
+      <li>Второй мультиплекс по вашему посёлку</li>
+      <li>ТВ для гостиниц и баз отдыха</li>
+      <li>Согласование антенны на фасаде</li>
+      <li>Установка антенны альпинистом</li>
+      <li>Прокладка кабеля под обоями</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ================= ДЛЯ КОГО ================= -->
+<section class="tint">
+  <img class="grass art-strip" src="assets/grass-strip.svg" alt="" aria-hidden="true" width="1200" height="70">
+  <div class="wrap">
+    <h2 class="sec">Кому это нужно</h2>
+    <p class="intro">Если хотя бы одно совпадает — вам к нам.</p>
+    <div class="grid2">
+      <div class="who">
+        <h3>В вашем посёлке нет интернета</h3>
+        <p>Ни проводного, ни нормального 4G. Спутниковый интернет работает в любой точке области.</p>
+      </div>
+      <div class="who">
+        <h3>Хотите два телевизора</h3>
+        <p>Один в гостиной, второй в спальне или на кухне. Ставим за один выезд, а не за два.</p>
+      </div>
+      <div class="who">
+        <h3>Плохая сотовая связь в доме</h3>
+        <p>В подвале, бане, гараже, за стеной. Усилитель решает проблему один раз и навсегда.</p>
+      </div>
+      <div class="who">
+        <h3>Боитесь переплатить</h3>
+        <p>Цену называем по телефону до выезда. На месте её не меняем. Платите только после монтажа.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= ГАРАНТИИ ================= -->
+<section>
+  <div class="wrap">
+    <h2 class="sec">Наши обещания</h2>
+    <div class="promise">
+      <ul>
+        <li>Цена известна до выезда и не меняется в процессе работы</li>
+        <li>Оплата только после того, как всё установили и показали, что работает</li>
+        <li>Гарантия 2 года на нашу работу и 1 год на оборудование</li>
+        <li>Выезд по всей Ленинградской области, в том числе в глушь</li>
+        <li>Если установить не получилось — за выезд не платите</li>
+        <li>Договор и гарантийный талон оставляем письменно</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ================= РАБОТЫ ================= -->
+<section class="tint">
+  <div class="wrap">
+    <h2 class="sec">Наши работы</h2>
+    <p class="intro">Только настоящие объекты. Такие же, как ваш.</p>
+    <div class="works">
+      <div class="work">
+        <div class="ph">Фото работы</div>
+        <div class="cap"><strong>Коттедж, Токсово</strong>Триколор на два телевизора. Установили за один день, март.</div>
+      </div>
+      <div class="work">
+        <div class="ph">Фото работы</div>
+        <div class="cap"><strong>Садоводство, Всеволожский район</strong>Усиление сотового сигнала в доме и бане, июнь.</div>
+      </div>
+      <div class="work">
+        <div class="ph">Фото работы</div>
+        <div class="cap"><strong>Посёлок, Выборгский район</strong>Спутниковый интернет, дом в 70 км от города, сентябрь.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= ОТЗЫВЫ ================= -->
+<section>
+  <div class="wrap">
+    <div class="head-with-art">
+      <img src="assets/apple-tree.svg" alt="">
+      <h2 class="sec">Что говорят клиенты</h2>
+    </div>
+    <p class="intro">С именами и районами — как на Авито.</p>
+    <div class="grid3">
+      <div class="review">
+        <p>«Поставили тарелку за полдня, цена такая, как и сказали по телефону. Всё показали, записали в договор. Довольна.»</p>
+        <div class="who-line">Валентина Ивановна, Всеволожский район</div>
+      </div>
+      <div class="review">
+        <p>«Интернет нужен был в гараже, обычный 4G не ловил совсем. Усилитель поставили, в гараже стало нормально. Работают аккуратно, ремонт не испортили.»</p>
+        <div class="who-line">Николай Петрович, Курортный район</div>
+      </div>
+      <div class="review">
+        <p>«Приставка перестала работать через три года. Поменяли на новую, старую забрали. Дешевле, чем я думал.»</p>
+        <div class="who-line">Галина Андреевна, Ломоносовский район</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= РАЙОНЫ ================= -->
+<section class="tint">
+  <div class="wrap illus-row">
+    <div>
+      <h2 class="sec">Куда выезжаем</h2>
+      <p class="intro">Выезд по всей Ленинградской области и по Санкт-Петербургу.</p>
+      <div class="districts">
+        <ul>
+          <li>Всеволожский район</li>
+          <li>Выборгский район</li>
+          <li>Приозерский район</li>
+          <li>Курортный район</li>
+          <li>Ломоносовский район</li>
+          <li>Тосненский район</li>
+          <li>Кировский район</li>
+          <li>Лужский район</li>
+          <li>Гатчинский район</li>
+          <li>Волховский район</li>
+          <li>Кирилловский район</li>
+          <li>Тихвинский район</li>
+          <li>Бокситогорский район</li>
+          <li>Подпорожский район</li>
+          <li>Сланцевский район</li>
+          <li>Псковская область</li>
+          <li>Новгородская область</li>
+          <li>Санкт-Петербург</li>
+        </ul>
+      </div>
+    </div>
+    <div class="illus illus-side">
+      <img class="grass" src="assets/flowers-row.svg" alt="" aria-hidden="true" width="400" height="150">
+    </div>
+  </div>
+</section>
+
+<!-- ================= FAQ ================= -->
+<section>
+  <div class="wrap">
+    <h2 class="sec">Частые вопросы</h2>
+    <p class="intro">Нажмите на вопрос, чтобы прочитать ответ.</p>
+
+    <div class="faq-item">
+      <div class="faq-q" onclick="faq(this)">Будет ли тарелка работать в плохую погоду? <span>+</span></div>
+      <div class="faq-a">Да. Сигнал идёт со спутника напрямую, дождь и снег его не гасят. Помешать может только деревья или новая высокая постройка рядом с домом. Если тарелку поставили правильно, она работает в любую погоду круглый год.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q" onclick="faq(this)">Сколько нужно платить за каналы каждый месяц? <span>+</span></div>
+      <div class="faq-a">От 239 ₽ в месяц. Точную сумму назовём по телефону до выезда и впишем в договор. Она не изменится без вашего решения.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q" onclick="faq(this)">У меня уже стоит старая тарелка, поменять приставку? <span>+</span></div>
+      <div class="faq-a">Да. Можно заменить только приставку, оставив тарелку на месте, — это дешевле. Или поменять всё. Скажите по телефону, что уже стоит, и мы назовём цену.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q" onclick="faq(this)">Если у меня уже есть проводной интернет, есть смысл ставить спутниковый? <span>+</span></div>
+      <div class="faq-a">Если проводной интернет работает нормально, то смысла нет: проводной быстрее и дешевле. Спутниковый нужен там, где провода нет совсем или связь совсем плохая.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q" onclick="faq(this)">Нужно ли платить за выезд, если установить не получится? <span>+</span></div>
+      <div class="faq-a">Нет. Если приехали, посмотрели и выяснилось, что установить нельзя, за выезд не платите.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q" onclick="faq(this)">Сколько служит тарелка и приставка? <span>+</span></div>
+      <div class="faq-a">Тарелка служит 10–15 лет и почти не ломается. Приставка — примерно 5–7 лет. На нашу работу даём гарантию 2 года, на оборудование — 1 год. Через 5–7 лет приставку поменяем на новую, тарелку трогать не нужно.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q" onclick="faq(this)">Можно ли смотреть на двух телевизорах? <span>+</span></div>
+      <div class="faq-a">Да. На даче часто нужны два телевизора: в гостиной и в спальне. Поставим за один выезд, стоимость от 11 500 ₽.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q" onclick="faq(this)">Вы ставите бесплатные каналы? <span>+</span></div>
+      <div class="faq-a">Да, 20 бесплатных каналов без абонентской платы. Иногда их не хватает — тогда ставим тарелку с платными каналами.</div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= ФОРМА ================= -->
+<section id="zayavka" class="tint">
+  <div class="wrap illus-row">
+    <div>
+      <h2 class="sec">Записаться на выезд</h2>
+      <p class="intro">Заполните два поля — перезвоним в течение 15 минут и назовём точную цену.</p>
+
+      <div class="form-box">
+        <form onsubmit="return false">
+          <label for="name">Как к вам обращаться</label>
+          <input type="text" id="name" placeholder="Например, Пётр Иванович">
+
+          <label for="tel">Телефон для звонка</label>
+          <input type="tel" id="tel" placeholder="+7 (___) ___-__-__">
+
+          <label>Что нужно сделать</label>
+          <div class="radio-row">
+            <label onclick="sel(this)"><input type="radio" name="n">Тарелку</label>
+            <label onclick="sel(this)"><input type="radio" name="n">Интернет</label>
+            <label onclick="sel(this)"><input type="radio" name="n">Усилить связь</label>
+            <label onclick="sel(this)"><input type="radio" name="n">Починить</label>
+          </div>
+
+          <label>Когда удобно принять мастера</label>
+          <div class="radio-row">
+            <label onclick="sel(this)"><input type="radio" name="w">В любой день</label>
+            <label onclick="sel(this)"><input type="radio" name="w">Будни</label>
+            <label onclick="sel(this)"><input type="radio" name="w">Выходные</label>
+          </div>
+
+          <a href="tel:+78120000000" class="btn btn-primary">Позвоните: 8 (812) 000-00-00</a>
+          <span class="form-note">Кнопка ниже — надёжнее: перезвоним сами в течение 15 минут.</span>
+        </form>
+      </div>
+    </div>
+
+    <div class="illus illus-side">
+      <img class="illus" src="assets/apple-tree.svg" alt="Яблоня во дворе" width="300" height="320">
+    </div>
+  </div>
+</section>
+
+<!-- ================= ПОДВАЛ ================= -->
+<footer>
+  <img class="grass" src="assets/grass-strip.svg" alt="" aria-hidden="true" width="1200" height="70">
+  <div class="wrap">
+    <div class="fgrid">
+      <div>
+        <h3>Связаться</h3>
+        <a href="tel:+78120000000" class="fphone">8 (812) 000-00-00</a>
+        <p>Ежедневно с 8:00 до 21:00, без выходных.<br>WhatsApp — по этому же номеру.</p>
+      </div>
+      <div>
+        <h3>Где мы</h3>
+        <p>Санкт-Петербург<br>Выезд по всей Ленинградской области</p>
+      </div>
+    </div>
+    <div class="fbottom">
+      Цены на странице действительны на текущий месяц и не являются публичной офертой. Точная стоимость называется по телефону после уточнения адреса и задачи.
+    </div>
+  </div>
+</footer>
+
+<script>
+function pick(el){
+  var all=el.parentNode.children;
+  for(var i=0;i<all.length;i++) all[i].classList.remove('on');
+  el.classList.add('on');
+}
+function sel(el){
+  var box=el.parentNode;
+  var all=box.children;
+  for(var i=0;i<all.length;i++) all[i].classList.remove('sel');
+  el.classList.add('sel');
+}
+function faq(el){
+  el.parentNode.classList.toggle('open');
+}
+</script>
+</body>
+</html>
